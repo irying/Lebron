@@ -26,4 +26,4 @@
 
 则该URL为：
 
-[http://api.ibos.cn/v1/users/checkmobile?mobile=13800138000&timestamp=1422241139&platform=pc&method=sha1&sign=337d550d7f29f7d93eb1428b14ff04627fa6e94e](http://api.ibos.cn/v1/users/checkmobile?mobile=13800138000&timestamp=1422241139&platform=pc&method=sha1&sign=337d550d7f29f7d93eb1428b14ff04627fa6e94e)
+[http://url/v1/users/checkmobile?mobile=13800138000&timestamp=1422241139&platform=pc&method=sha1&sign=337d550d7f29f7d93eb1428b14ff04627fa6e94e](http://api.ibos.cn/v1/users/checkmobile?mobile=13800138000&timestamp=1422241139&platform=pc&method=sha1&sign=337d550d7f29f7d93eb1428b14ff04627fa6e94e)
