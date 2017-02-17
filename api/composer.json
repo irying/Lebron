@@ -1,0 +1,27 @@
+{
+  "name": "shihunguilai/phpapi",
+  "description": "cliff zhang`s php api",
+  "authors": [
+    {
+      "name": "cliff zhang",
+      "email": "1058462838@qq.com"
+    }
+  ],
+  "require":{
+    "php":">=5.3"
+  },
+  "require-dev":{
+    "phpunit/phpunit": "~4.8",
+    "friendsofphp/php-cs-fixer": "^1.12"
+  },
+  "autoload": {
+    "psr-4": {
+      "shihunguilai\\phpapi\\": "src/"
+    }
+  },
+  "audoload-dev": {
+    "psr-4": {
+      "shihunguilai\\phpapi": "tests/"
+    }
+  }
+}
