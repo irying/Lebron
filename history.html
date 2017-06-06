@@ -1,0 +1,265 @@
+   
+   http://udn.yyuap.com/doc/docker_practice/image/pull.html
+   https://www.daocloud.io/mirror#accelerator-doc
+ 
+   
+    1  docker images
+    2  ll
+    3  cd /
+    4  ll
+    5  cd var/
+    6  ll
+    7  cd ..
+    8  ll
+    9  mkdir 39docker
+   10  ll
+   11  cd 39docker/
+   12  mkdir www conf
+   13  cd conf/
+   14  curl -o https://gist.githubusercontent.com/irying/a5e1f56c6568593f7e9cc111fe7ed6ea/raw/7ff47cb938f921453edbd58d9ed2a4ddb45d1f85/default.conf default.conf
+   15  curl -o https://gist.githubusercontent.com/irying/a5e1f56c6568593f7e9cc111fe7ed6ea/raw/7ff47cb938f921453edbd58d9ed2a4ddb45d1f85/default.conf /39docker/conf/default.conf
+   16  curl -o https://gist.githubusercontent.com/irying/a5e1f56c6568593f7e9cc111fe7ed6ea/raw/7ff47cb938f921453edbd58d9ed2a4ddb45d1f85/default.conf  /39docker/conf/default.conf
+   17  curl -L https://gist.githubusercontent.com/irying/a5e1f56c6568593f7e9cc111fe7ed6ea/raw/7ff47cb938f921453edbd58d9ed2a4ddb45d1f85/default.conf  -o /39docker/conf/default.conf
+   18  ll
+   19  chmod 775 default.conf 
+   20  cd ..
+   21  ll
+   22  cd www
+   23  cd ..
+   24  docker run --name 39nginx -p 80:80 -d -v /39docker/www:/usr/share/nginx/html nginx
+   25  docker run
+   26  docker ps
+   27  chmod 775 www/
+   28  chown www-data:www-data  www/
+   29  ll
+   30  docker stop 39nginx
+   31  docker start 39nginx
+   32  docker logs 39nginx 
+   33  ll
+   34  cd www/
+   35  ll
+   36  touch index.html
+   37  vi index.html 
+   38  ll
+   39  cd ..
+   40  chown -R www-data:www-data www/
+   41  ll
+   42  cd ww
+   43  cd www
+   44  ll
+   45  chmod 775 index.html 
+   46  cd ..
+   47  docker pull php:7-fpm
+   48  cd www/
+   49  ll
+   50  vi index.php
+   51  ll
+   52  chmod 775 index.php 
+   53  mv index.php info.php
+   54  docker run --name 39phpfpm -d -v /39docker/www:/var/www/html:ro php:7-fpm
+   55  docker images
+   56  docker ps
+   57  docker stop 39nginx 
+   58  docker run --name 39-1nginx -p 80:80 -d -v /39docker/www:/usr/share/nginx/html -v /39docker/conf/default.conf:/etc/nginx/conf.d/default.conf --link phpfpm:39phpfpm nginx
+   59  docker run --name 39-1nginx -p 80:80 -d -v /39docker/www:/usr/share/nginx/html -v /39docker/conf/default.conf:/etc/nginx/conf.d/default.conf --link 39phpfpm:phpfpm nginx
+   60  docker ps
+   61  ll
+   62  docker exec -ti 39-1nginx bash
+   63  vi test1/php
+   64  vi test1.php
+   65  ll
+   66  cd ..
+   67  ll
+   68  cd www/
+   69  ll
+   70  hitory >> history.html
+   71  hitsory >> history.html
+   72  history >> history.html
+    1  apt-get update
+    2  git 
+    3  apt-get install git
+    4  ll
+    5  cd /
+    6  ls
+    7  ll
+    8  git 
+    9  git help -config
+   10  git help --config
+   11  git config
+   12  git config --global 
+   13  git config --global user.name kyrie
+   14  git config --global user.email kyrieup@gmail.com
+   15  git config
+   16  git config user.
+   17  git config user
+   18  git config global
+   19  git config list
+   20  git config --list
+   21  cd ~/.ss
+   22  cd ~/.ssh
+   23  ll
+   24  cat id_rsa.pub >> authorized_keys 
+   25  ll
+   26  rm id_rsa.pub 
+   27  ll
+   28  logout
+   29  apt-get install apt-transport-https
+   30  apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
+   31  bash -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+   32  apt-get update
+   33  apt-get install lxc-docker
+   34  docker
+   35  docker pull nginx
+   36  docker images
+   37  docker pull nginx
+   38  docker pull ubuntu:14.04
+   39  curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://2f59f0b1.m.daocloud.io
+   40  service docker restart 
+   41  docker pull nginx
+   42  docker images
+   43  ll
+   44  cd /
+   45  ll
+   46  cd var/
+   47  ll
+   48  cd ..
+   49  ll
+   50  mkdir 39docker
+   51  ll
+   52  cd 39docker/
+   53  mkdir www conf
+   54  cd conf/
+   55  curl -o https://gist.githubusercontent.com/irying/a5e1f56c6568593f7e9cc111fe7ed6ea/raw/7ff47cb938f921453edbd58d9ed2a4ddb45d1f85/default.conf default.conf
+   56  curl -o https://gist.githubusercontent.com/irying/a5e1f56c6568593f7e9cc111fe7ed6ea/raw/7ff47cb938f921453edbd58d9ed2a4ddb45d1f85/default.conf /39docker/conf/default.conf
+   57  curl -o https://gist.githubusercontent.com/irying/a5e1f56c6568593f7e9cc111fe7ed6ea/raw/7ff47cb938f921453edbd58d9ed2a4ddb45d1f85/default.conf  /39docker/conf/default.conf
+   58  curl -L https://gist.githubusercontent.com/irying/a5e1f56c6568593f7e9cc111fe7ed6ea/raw/7ff47cb938f921453edbd58d9ed2a4ddb45d1f85/default.conf  -o /39docker/conf/default.conf
+   59  ll
+   60  chmod 775 default.conf 
+   61  cd ..
+   62  ll
+   63  cd www
+   64  cd ..
+   65  docker run --name 39nginx -p 80:80 -d -v /39docker/www:/usr/share/nginx/html nginx
+   66  docker run
+   67  docker ps
+   68  chmod 775 www/
+   69  chown www-data:www-data  www/
+   70  ll
+   71  docker stop 39nginx
+   72  docker start 39nginx
+   73  docker logs 39nginx 
+   74  ll
+   75  cd www/
+   76  ll
+   77  touch index.html
+   78  vi index.html 
+   79  ll
+   80  cd ..
+   81  chown -R www-data:www-data www/
+   82  ll
+   83  cd ww
+   84  cd www
+   85  ll
+   86  chmod 775 index.html 
+   87  cd ..
+   88  docker pull php:7-fpm
+   89  cd www/
+   90  ll
+   91  vi index.php
+   92  ll
+   93  chmod 775 index.php 
+   94  mv index.php info.php
+   95  docker run --name 39phpfpm -d -v /39docker/www:/var/www/html:ro php:7-fpm
+   96  docker images
+   97  docker ps
+   98  docker stop 39nginx 
+   99  docker run --name 39-1nginx -p 80:80 -d -v /39docker/www:/usr/share/nginx/html -v /39docker/conf/default.conf:/etc/nginx/conf.d/default.conf --link phpfpm:39phpfpm nginx
+  100  docker run --name 39-1nginx -p 80:80 -d -v /39docker/www:/usr/share/nginx/html -v /39docker/conf/default.conf:/etc/nginx/conf.d/default.conf --link 39phpfpm:phpfpm nginx
+  101  docker ps
+  102  ll
+  103  docker exec -ti 39-1nginx bash
+  104  vi test1/php
+  105  vi test1.php
+  106  ll
+  107  cd ..
+  108  ll
+  109  cd www/
+  110  ll
+  111  hitory >> history.html
+  112  hitsory >> history.html
+  113  history >> history.html
+  114  cd /39docker/www/
+  115  vi index.php
+  116  cd /39docker/www
+  117  ll
+  118  vi history.html 
+  119  pip install docker-py
+  120  pip install docker-compose
+  121  pip install docker-compose --upgrade 
+  122  docker-compose
+  123  pip uninstall  docker-py;
+  124  docker
+  125  docker images
+  126  docker-compose
+  127  curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+  128  pip install -U docker-compose
+  129  docker-compose
+  130  docker-compose -h
+  131  curl -L https://raw.githubusercontent.com/docker/compose/1.8.0/contrib/completion/bash/docker-compose > /etc/bash_completion.d/docker-compose
+  132  docker-compose -h
+  133  sudo docker-compose -h
+  134  docker-compose -h
+  135  sudo rm /usr/local/bin/docker-compose
+  136  pip uninstall docker-compose
+  137  curl -L https://github.com/docker/compose/releases/download/1.8.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+  138  chmod a+x /usr/local/bin/docker-compose
+  139  docker-compose -h
+  140  compose -version
+  141  compose --version
+  142  docker-compose --version
+  143  cd /39docker/
+  144  ll
+  145  mkdir compose
+  146  cd compose/
+  147  curl -o https://gist.githubusercontent.com/irying/e6df0503cd6d57d0a4e07d4fabbbc0b9/raw/dddbb3ba27f6e886b2b19fc80cd1a763a9742d5e/nginx-docker-compose.yaml docker-compose.yaml
+  148  curl  https://gist.githubusercontent.com/irying/e6df0503cd6d57d0a4e07d4fabbbc0b9/raw/dddbb3ba27f6e886b2b19fc80cd1a763a9742d5e/nginx-docker-compose.yaml -o docker-compose.yaml
+  149  ll
+  150  docker-compose up
+  151  cd
+  152  cd /39docker/co
+  153  cd /39docker/compose/
+  154  ll
+  155  mkdir nginx
+  156  mv docker-compose.yaml ./nginx/docker-compose.yaml
+  157  cd nginx/
+  158* curl https://gist.githubusercontent.com/irying/e6df0503cd6d57d0a4e07d4fabbbc0b9/raw/dddbb3ba27f6e886b2b19fc80cd1a763a9742d5e/sit
+  159  ll
+  160  mv docker-compose.yaml nginx-docker-composer.yaml
+  161  curl https://gist.githubusercontent.com/irying/e6df0503cd6d57d0a4e07d4fabbbc0b9/raw/dddbb3ba27f6e886b2b19fc80cd1a763a9742d5e/php-docker-compose.yaml -o docker-compose.yaml
+  162  ll
+  163  cd ..
+  164  cp ./nginx/site.conf site.conf
+  165  cp ./nginx/docker-compose.yaml docker-composer.yaml
+  166  ll
+  167  docker-compose up
+  168  mv docker-composer.yaml docker-compose.yaml 
+  169  docker-compose up
+  170  cat docker-compose.yaml 
+  171  vi docker-compose.yaml 
+  172  docker-compose up
+  173  vi docker-compose.yaml 
+  174  docker-compose up
+  175  cd ..
+  176  cd compose/
+  177  vi info.php
+  178  docker-compose up
+  179  cat site.conf 
+  180  mkdir code
+  181  ll
+  182  mv info.php ./code/info.php
+  183  docker-compose up
+  184  docker-compose -h
+  185  docker-compose up -h
+  186  docker-compose up -d
+  187  docker-compose stop
+  188  history >> /39docker/www/history.html 
